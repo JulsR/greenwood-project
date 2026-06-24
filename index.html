@@ -105,6 +105,32 @@
     transition:transform .18s ease;
   }
   .card:hover .arrow,.card:focus-visible .arrow{transform:translateX(5px);}
+
+  /* section divider */
+  .section-label{
+    display:flex;align-items:center;gap:.75rem;
+    font-size:.66rem;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--muted);
+    margin:2.4rem 0 1rem;
+  }
+  .section-label::after{
+    content:"";flex:1;height:1px;background:var(--line);
+  }
+
+  /* archived / superseded */
+  .card.archived{
+    background:#F1F0EA;
+    border-left-color:#C7C7BE;
+    opacity:.82;
+  }
+  .card.archived:hover,.card.archived:focus-visible{
+    border-left-color:var(--muted);
+    opacity:1;
+  }
+  .card.archived .tag{color:var(--muted);}
+  .card.archived .arrow{color:var(--muted);}
+  .card.archived h2{color:#454B45;}
+
   footer{
     margin-top:3rem;
     padding-top:1.4rem;
@@ -128,9 +154,18 @@
     <p class="eyebrow">Project Index</p>
     <h1>Greenwood Content Strategy</h1>
     <div class="rule"></div>
-    <p class="lead">Current-state audits and the FY26 execution plan — the working foundation for Greenwood's content system.</p>
+    <p class="lead">The FY26 scope and roadmap, plus the current-state audit that grounds it — the working foundation for Greenwood's content system.</p>
 
     <nav class="cards" aria-label="Greenwood content strategy documents">
+      <a class="card" href="Greenwood_Scope_Plan.html">
+        <span class="body">
+          <span class="tag">Strategy &middot; Current</span>
+          <h2>Scope &amp; Roadmap</h2>
+          <p>The content function's weekly scope, who owns what, the 30/60/90 roadmap, and the Foundation switch-on sequence — anchored to the September 30 goal.</p>
+        </span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+
       <a class="card" href="Greenwood-Content-Audit.html">
         <span class="body">
           <span class="tag">Channel Audit</span>
@@ -140,20 +175,13 @@
         <span class="arrow" aria-hidden="true">&rarr;</span>
       </a>
 
-      <a class="card" href="Greenwood-Social-Audit.html">
-        <span class="body">
-          <span class="tag">Social Audit</span>
-          <h2>Social Media Audit</h2>
-          <p>A focused read on Greenwood's social presence — what's driving growth, and what's holding it back.</p>
-        </span>
-        <span class="arrow" aria-hidden="true">&rarr;</span>
-      </a>
+      <p class="section-label">Archived</p>
 
-      <a class="card" href="Greenwood_Scope_Plan.html">
+      <a class="card archived" href="Greenwood-Social-Audit.html">
         <span class="body">
-          <span class="tag">Strategy</span>
-          <h2>Execution &amp; Alignment Plan</h2>
-          <p>How the goals, the 50/30/20 content mix, cadence, and targets map to the engagement for FY26.</p>
+          <span class="tag">Superseded &middot; Older file</span>
+          <h2>Social Media Audit</h2>
+          <p>An earlier, social-only read — now folded into the broader Content &amp; Channel Audit above. Kept for reference.</p>
         </span>
         <span class="arrow" aria-hidden="true">&rarr;</span>
       </a>
